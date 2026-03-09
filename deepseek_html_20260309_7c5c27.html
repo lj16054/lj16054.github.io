@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GummyLab · 定制软糖 OEM/ODM 工厂</title>
+  <!-- Font Awesome 6 (免费图标库) 用于显示WhatsApp、领英及产品图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: 清晰现代字体 Inter & Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1e1e2a;
+      line-height: 1.5;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 品牌导航简化 */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #f0f0f5;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f9a826 0%, #e67e22 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo span {
+      background: none;
+      -webkit-text-fill-color: #1e1e2a;
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-left: 5px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      background: #f8f4f0;
+      padding: 8px 16px;
+      border-radius: 40px;
+      color: #b45f2b;
+      font-weight: 500;
+    }
+
+    /* 按钮样式 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-wa {
+      background-color: #25D366;
+      color: white;
+      box-shadow: 0 8px 18px rgba(37, 211, 102, 0.2);
+    }
+
+    .btn-wa:hover {
+      background-color: #20b859;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-li {
+      background-color: #0077b5;
+      color: white;
+      box-shadow: 0 8px 18px rgba(0, 119, 181, 0.2);
+    }
+
+    .btn-li:hover {
+      background-color: #00669c;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(0, 119, 181, 0.3);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #1e1e2a;
+      color: #1e1e2a;
+    }
+
+    .btn-outline:hover {
+      background-color: #1e1e2a;
+      color: #ffffff;
+    }
+
+    /* HERO 区域 */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 60px 0 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1e1e2a;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(145deg, #f9a826, #e67e22);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #4a4a5a;
+      margin-bottom: 32px;
+      max-width: 90%;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      color: #e67e22;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: #6b6b7b;
+    }
+
+    .hero-image {
+      background: #fef7f0;
+      border-radius: 40px;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .gummy-icon-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .gummy-icon-card {
+      background: white;
+      border-radius: 30px;
+      padding: 30px 15px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+      border: 1px solid #fae1d2;
+    }
+
+    .gummy-icon-card i {
+      font-size: 3.5rem;
+      color: #e67e22;
+      margin-bottom: 10px;
+    }
+
+    .gummy-icon-card span {
+      font-weight: 600;
+      color: #4a2e1f;
+    }
+
+    /* 信任/优势区域 */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin: 80px 0;
+    }
+
+    .feature-card {
+      background: #faf9fc;
+      padding: 36px 24px;
+      border-radius: 28px;
+      text-align: center;
+      transition: all 0.2s;
+      border: 1px solid #f0f0f7;
+    }
+
+    .feature-card:hover {
+      background: #ffffff;
+      border-color: #f9a826;
+      box-shadow: 0 25px 40px -12px rgba(249, 168, 38, 0.15);
+    }
+
+    .feature-card i {
+      font-size: 2.8rem;
+      color: #e67e22;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+    }
+
+    .feature-card p {
+      color: #5a5a6e;
+    }
+
+    /* 产品展示区 (软糖类型) */
+    .section-title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin: 60px 0 30px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #6b6b7b;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 40px;
+      padding: 40px 20px;
+      text-align: center;
+      border: 1px solid #f1e1d4;
+      transition: all 0.2s;
+    }
+
+    .product-card i {
+      font-size: 3.8rem;
+      color: #e67e22;
+      margin-bottom: 20px;
+    }
+
+    .product-card h4 {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .product-card p {
+      color: #7a7a8c;
+      font-size: 0.95rem;
+    }
+
+    /* 主要联系 CTA 区域 (WhatsApp + LinkedIn) */
+    .contact-cta {
+      background: linear-gradient(135deg, #fef4e8, #fff8f0);
+      border-radius: 60px;
+      padding: 60px 40px;
+      margin: 80px 0;
+      text-align: center;
+    }
+
+    .contact-cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-cta p {
+      font-size: 1.2rem;
+      color: #4a4a5a;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .contact-buttons .btn {
+      min-width: 240px;
+      padding: 18px 36px;
+      font-size: 1.2rem;
+    }
+
+    .btn i {
+      font-size: 1.6rem;
+    }
+
+    .or-line {
+      margin: 20px 0;
+      font-weight: 500;
+      color: #b2a596;
+    }
+
+    .linkedin-hint {
+      margin-top: 25px;
+      font-size: 1rem;
+      color: #5f5f73;
+    }
+
+    .linkedin-hint a {
+      color: #0077b5;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .linkedin-hint a:hover {
+      text-decoration: underline;
+    }
+
+    /* 页脚 */
+    .footer {
+      border-top: 1px solid #ececf2;
+      padding: 40px 0;
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #5e5e72;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .footer-links a {
+      color: #3a3a4a;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-links a:hover {
+      color: #e67e22;
+    }
+
+    .github-note {
+      background: #f1f1f8;
+      padding: 20px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: #3a3a4a;
+      margin: 40px 0 0;
+    }
+
+    .github-note i {
+      color: #24292e;
+    }
+
+    /* 响应式 */
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      .contact-buttons .btn {
+        width: 100%;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 极简导航 突出品牌 -->
+    <div class="navbar">
+      <div class="logo">
+        GUMMYLAB <span>®</span>
+      </div>
+      <div class="tagline">
+        <i class="fas fa-candy-cane" style="margin-right: 8px;"></i> OEM/ODM 软糖专家
+      </div>
+    </div>
+
+    <!-- Hero 主要区块 + 引导沟通 (WhatsApp & 领英 融入其中) -->
+    <div class="hero">
+      <div>
+        <h1>
+          Your Vision, <br>
+          <span class="hero-highlight">Our Gummy</span> Craft
+        </h1>
+        <p>
+          从配方研发到成品包装，我们提供一站式软糖定制服务。 
+          <strong>OEM / ODM</strong> 灵活配合，助您快速抢占市场。
+        </p>
+        <div class="hero-actions">
+          <!-- 核心引导: WhatsApp 按钮 和 LinkedIn 按钮 (直接展示) -->
+          <a href="https://wa.me/8612345678901?text=Hello%20GummyLab!%20I'm%20interested%20in%20your%20OEM%20services." 
+             class="btn btn-wa" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp 立即洽谈
+          </a>
+          <a href="https://linkedin.com/company/gummylab" 
+             class="btn btn-li" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin"></i> LinkedIn 建立联系
+          </a>
+        </div>
+        <!-- 信任数字 (增强说服力) -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">定制配方</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">全球伙伴</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">15</span>
+            <span class="stat-label">年经验</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧软糖图标装饰 同时强化品牌印象 -->
+      <div class="hero-image">
+        <div class="gummy-icon-grid">
+          <div class="gummy-icon-card"><i class="fas fa-candy"></i><span>水果软糖</span></div>
+          <div class="gummy-icon-card"><i class="fas fa-capsules"></i><span>维生素</span></div>
+          <div class="gummy-icon-card"><i class="fas fa-leaf"></i><span>草本</span></div>
+          <div class="gummy-icon-card"><i class="fas fa-dragon"></i><span>趣味造型</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 为什么选择我们 (三大优势) 强化OEM/ODM专业度 -->
+    <div class="features">
+      <div class="feature-card">
+        <i class="fas fa-flask"></i>
+        <h3>配方研发</h3>
+        <p>食品科学家团队，支持功能性、口感和营养定制，快速试样。</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-box-open"></i>
+        <h3>包装设计</h3>
+        <p>从瓶装、袋装到私标礼盒，一站式包装定制，品牌专属呈现。</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-certificate"></i>
+        <h3>资质齐全</h3>
+        <p>ISO22000、BRC、有机认证，出口欧美标准，全程可追溯。</p>
+      </div>
+    </div>
+
+    <!-- 产品系列 / 可定制类型 (让客户了解范围) -->
+    <h2 class="section-title">🍬 可定制软糖系列</h2>
+    <div class="section-sub">无论您瞄准哪个赛道，我们都能实现</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <i class="fas fa-apple-alt"></i>
+        <h4>果汁软糖</h4>
+        <p>真正果汁添加，口感Q弹，天然色泽</p>
+      </div>
+      <div class="product-card">
+        <i class="fas fa-vitamins"></i>
+        <h4>维生素功能糖</h4>
+        <p>VC、钙铁锌、DHA…… 营养靶向递送</p>
+      </div>
+      <div class="product-card">
+        <i class="fas fa-moon"></i>
+        <h4>助眠/舒缓</h4>
+        <p>褪黑素、GABA、草本助眠配方</p>
+      </div>
+      <div class="product-card">
+        <i class="fas fa-cat"></i>
+        <h4>趣味造型</h4>
+        <p>小熊、恐龙、字母…… 吸睛外形定制</p>
+      </div>
+    </div>
+
+    <!-- 重点区域: 强引导至 WhatsApp 和 LinkedIn (再次突出，完全满足需求) -->
+    <div class="contact-cta">
+      <h2>🙌 开启您的软糖定制项目</h2>
+      <p>单击下方按钮，直接通过 WhatsApp 或 LinkedIn 与我们沟通。<br> 
+         工厂技术负责人快速响应，24小时内为您提供初步方案。</p>
+      
+      <div class="contact-buttons">
+        <!-- WhatsApp 按钮 (可替换号码) 包含预设消息 -->
+        <a href="https://wa.me/8612345678901?text=Hello%2C%20I%20need%20a%20quote%20for%20custom%20gummies." 
+           class="btn btn-wa" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> 发起WhatsApp聊天
+        </a>
+        <!-- LinkedIn 按钮 (可替换为公司/个人链接) -->
+        <a href="https://linkedin.com/company/gummylab" 
+           class="btn btn-li" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i> 通过领英联系
+        </a>
+      </div>
+      
+      <div class="linkedin-hint">
+        <i class="fas fa-info-circle"></i> 还没决定？也可以先关注我们的 <a href="https://linkedin.com/company/gummylab" target="_blank">领英公司主页</a>，了解最新案例。
+      </div>
+
+      <!-- 备用的WhatsApp号码提示(方便用户直接修改) 并说明占位 -->
+      <div style="margin-top: 30px; font-size: 0.9rem; background: rgba(255,255,240,0.7); padding: 12px; border-radius: 60px;">
+        <i class="fas fa-pencil-alt"></i> 提示：示例号码 <strong>+86 123 4567 8901</strong> ，请替换为您的真实WhatsApp号码。领链接受更改为您的公司或个人页面。
+      </div>
+    </div>
+
+    <!-- 额外的联系方式 (小而精) 依然以WhatsApp和领英为主 -->
+    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 40px 0 10px;">
+      <span style="display: flex; align-items: center; gap: 8px;"><i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.5rem;"></i> +86 123 4567 8901 (示例)</span>
+      <span style="display: flex; align-items: center; gap: 8px;"><i class="fab fa-linkedin" style="color: #0077b5; font-size: 1.5rem;"></i> linkedin.com/company/gummylab (示例)</span>
+    </div>
+
+    <!-- 页脚 + GitHub Pages 说明 (针对用户的疑问) -->
+    <div class="footer">
+      <div>© 2025 GummyLab 定制工厂 · 所有展示为示例，可自由替换</div>
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+
+    <!-- 关于部署在GitHub上的解释区块 (解答用户核心疑虑) -->
+    <div class="github-note">
+      <i class="fab fa-github"></i> 本站已完全静态化，可轻松部署在 <strong>GitHub Pages</strong> (免费托管)  ✅ 无需购买服务器<br>
+      关于域名：如果您希望使用自己的域名(如 www.yourfactory.com) 则需要购买并配置；若使用默认的 <strong>yourname.github.io/repo</strong> 则完全免费，无需任何花费。<br>
+      当前页面所有联系电话/链接均为占位符，请替换为您自己的 WhatsApp 号码和领英地址。
+    </div>
+
+    <!-- 微小脚本：动态更新版权年份（可选） -->
+    <script>
+      // 简单功能：更新页脚年份 (非必须，仅锦上添花)
+      document.addEventListener('DOMContentLoaded', function() {
+        const yearSpan = document.querySelector('.footer div:first-child');
+        if (yearSpan) {
+          const currentYear = new Date().getFullYear();
+          yearSpan.innerHTML = yearSpan.innerHTML.replace('2025', currentYear);
+        }
+      });
+    </script>
+  </div>
+  <!-- 容器结束 -->
+
+  <!-- 额外的提示：所有链接默认在新窗口打开，已添加 rel="noopener" 保证安全 -->
+</body>
+</html>
